@@ -1,0 +1,23 @@
+.checkout-container{
+    max-width: 600px;
+    margin:100px auto;
+    text-align: center;
+    min-height: 400px;;
+}
+
+.checkout-container h2{
+    margin:40px 0 0 0 ;
+    color:#00b1f3;
+    text-decoration:none;
+}
+.checkout-container a{
+    color:#00b1f3;
+    text-decoration:none;
+    padding:10px 13px;
+    border:1px solid #00b1f3;
+}
+.checkout-container a:hover{
+    color:#000;
+    border:1px solid #00b1f3;
+    background:#00b1f3;
+}

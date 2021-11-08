@@ -1,0 +1,26 @@
+.main{
+    width:100%;
+}
+
+.products-container{
+    padding:20px;
+    max-width:900px;
+    margin:40px auto;
+    /* background: #d2d1cd; */
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:20px;
+    align-items: center;
+}
+
+@media(max-width:768px){
+    .products-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:468px){
+    .products-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}

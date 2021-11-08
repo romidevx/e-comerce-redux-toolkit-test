@@ -1,0 +1,75 @@
+.filters-container{
+    padding:5px 40px;
+    display:flex;
+    justify-content: space-between;
+    max-width:1000px;
+    margin:20px auto;
+    /* background: #d2d1cd; */
+    position:relative;
+}
+
+
+/* === BOTÃO FILTROS === */
+
+.dropdown-container button{
+    padding:10px 15px;
+    border:1px solid #00aff0;
+    background:transparent;
+    color:#00aff0;
+    cursor:pointer;
+    font-size: 11px;
+    outline:none
+} 
+
+.filter-items{
+    border:1px solid #00aff0;
+    padding:10px;
+    position: absolute;
+    background: #fff;
+    margin-top:3px;
+}
+
+.item{
+    list-style: none;
+    padding:10px 5px;
+    color:#00aff0;
+}
+
+.item:hover{
+    list-style: none;
+    background:#00aff0;
+    color:#fff;
+    cursor:pointer;
+}
+.InVisible{
+    border:1px solid #00aff0;
+    padding:10px;
+    position: absolute;
+    background: #fff;
+    visibility: hidden;
+}
+
+
+
+/* === BOTÃO ORDER ALFABÉTICA === */
+
+.OrdemAlfabeticaButton-container button{
+    padding:10px 15px;
+    border:1px solid #00aff0;
+    background:transparent;
+    color:#00aff0;
+    cursor:pointer;
+    font-size: 11px;
+    outline:none;
+}
+
+.OrdemAlfabeticaButton-container button:hover{
+    background:#00aff0;
+    color:#fff;
+}
+
+@media(max-width:468px){
+    .item-cart-price {
+        font-size: 21px;
+    }
+}

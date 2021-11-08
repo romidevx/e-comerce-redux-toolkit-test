@@ -1,0 +1,30 @@
+.total-container{
+    margin-top:-10px; 
+    text-align:right ;
+    
+}
+
+.total-container h5{
+    color:rgb(139, 7, 7);
+    font-size: 16px;
+    padding:5px 0;
+}
+
+.total-container span{
+    color:#8c8c8c;
+    font-size: 17px;
+    padding:10px 0;
+}
+
+.total-values h3{
+    border-bottom: 1px solid #8c8c8c;
+    padding-bottom: 5px;
+}
+
+@media(max-width:468px){
+    .total-container {
+        margin-top: 30px;
+        width: 100%;
+        padding: 0 20px;
+    }
+}
