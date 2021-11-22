@@ -12,15 +12,12 @@ export const cartSlice =  createSlice({
             state.cart.push(action.payload);
             localStorage.setItem('cart', JSON.stringify([...state.cart]))
             console.log('cart slice to add: ' + action.payload);
-            
-
         }, 
 
         deleteProductFromCart: (state, action) => {
             state.cart = state.cart.filter(item => item.id !== action.payload);
             localStorage.setItem('cart', JSON.stringify([...state.cart]));
         },
-
 
         decreaseProductQuantity: (state, action) => {
             let itemIndex = state.cart.findIndex(itemToDecrease => itemToDecrease.id === action.payload);
@@ -36,6 +33,7 @@ export const cartSlice =  createSlice({
             state.cart[itemIndex].quantity += 1;
             localStorage.setItem('cart', JSON.stringify([...state.cart]));
         },
+        
         checkOutCart:(state) => {
             state.cart = [];
         }

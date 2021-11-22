@@ -8,8 +8,6 @@ import {useDispatch,useSelector} from 'react-redux';
 import {addProductToCart} from '../../store/slices/cartSlice';
 
 function ProductDetails() {
-
-    const baseImageUrl = '/images/';
     // CART STORE
     const {cart} = useSelector(state => state.cart);
     // PRODUCTS STORE
@@ -45,7 +43,7 @@ function ProductDetails() {
             <div className="product-details-container">
 
                 <div className="product-image-container">
-                    <img className="product-detail-image" src={baseImageUrl+filteredItem.image} alt="" />
+                    <img className="product-detail-image" src={'/images/' + filteredItem.image} alt="" />
                 </div>
 
                 <div className="product-info">
