@@ -17,8 +17,8 @@ function ProductDetails() {
     const dispatch = useDispatch();
 
     // GET PRODUCT INFO
-    const filteredItem = products.find(item => item.id === id);
-
+    const filteredItem = products.find(item => Number(item.id) === Number(id));
+    
     // ADD PRODUCT TO CART
     const addItemToCart = () => {
         dispatch(addProductToCart({
@@ -77,6 +77,8 @@ function ProductDetails() {
                         </Link>    
                     </div>
                 </div>
+
+                {/* {JSON.stringify(filteredItem)} */}
 
             </div>
         
