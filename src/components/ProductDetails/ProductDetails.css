@@ -9,6 +9,7 @@
 }
 .product-image-container{
     flex:45%;
+    align-self: center;
 }
 
 .product-detail-image{
