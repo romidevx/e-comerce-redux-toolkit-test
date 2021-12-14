@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './Product.css';
 // REACT REDUX
-import {useDispatch,useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 
 function Product({productInfo}) {
