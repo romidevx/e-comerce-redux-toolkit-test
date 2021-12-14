@@ -78,8 +78,6 @@ function ProductDetails() {
                     </div>
                 </div>
 
-                {/* {JSON.stringify(filteredItem)} */}
-
             </div>
         
     )
