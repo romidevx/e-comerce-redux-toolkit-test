@@ -34,8 +34,6 @@ function ProductDetails() {
     // CHECK IF PRODUCT IS IN CART
     const isProductInCart = (itemId) => cart.some(cartItem => cartItem.id === itemId);
 
-    console.log(isProductInCart ? 'is in cart' : 'not in cart')
-
     useEffect(() => {
         window.scroll(0,0)
     }, [])

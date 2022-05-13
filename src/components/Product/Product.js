@@ -7,15 +7,11 @@ import {useSelector} from 'react-redux';
 
 function Product({productInfo}) {
 
-    const {id,name,image,price,score} = productInfo;
-
-    console.log(id,name,image,price,score)
-
     // CART STORE
     const {cart} = useSelector(state => state.cart);
 
     // CHECK IF PRODUCT IS IN CART
-    const isProductInCart = (itemId) => cart.some(cartItem => cartItem.id == itemId);
+    const isProductInCart = (itemId) => cart.some(cartItem => cartItem.id === itemId);
 
 
     return (

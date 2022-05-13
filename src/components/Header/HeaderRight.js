@@ -6,7 +6,6 @@ import { cartCount } from '../../store/slices/cartSlice';
 
 function HeaderRight() {
     const count = useSelector(cartCount);
-    console.log(count)
 
     return (
         <div className="header-right-container">
