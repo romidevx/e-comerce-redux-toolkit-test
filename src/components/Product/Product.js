@@ -7,11 +7,15 @@ import {useSelector} from 'react-redux';
 
 function Product({productInfo}) {
 
+    const {id,name,image,price,score} = productInfo;
+
+    console.log(id,name,image,price,score)
+
     // CART STORE
     const {cart} = useSelector(state => state.cart);
 
     // CHECK IF PRODUCT IS IN CART
-    const isProductInCart = (itemId) => cart.some(cartItem => cartItem.id === itemId);
+    const isProductInCart = (itemId) => cart.some(cartItem => cartItem.id == itemId);
 
 
     return (
@@ -28,7 +32,7 @@ function Product({productInfo}) {
                 <div className='product-description'>
                     {
                         isProductInCart(productInfo.id) 
-                        ?  <h3 style={{ backgroundColor:'#ffcc00',color:'#000',padding:'7px 10px'}}>Product added to shop cart</h3>     
+                        ?  <h3 style={{ backgroundColor:'#ffcc00',color:'#000',padding:'7px 10px'}}>In cart</h3>     
                         : <div>
                             <span>id#   <b>{productInfo.id}   </b></span>
                             <span>score:<b>{productInfo.score}</b></span>
