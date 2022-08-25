@@ -1,15 +1,14 @@
 import React from 'react';
 import './TotalDescription.css';
 import {useSelector,useDispatch} from 'react-redux';
-import { cartCount, cartTotal } from '../../store/slices/cartSlice';
+//import {cartTotal } from '../../store/slices/cartSlice';
 import {checkOutCart} from '../../store/slices/cartSlice';
 import {useHistory} from 'react-router-dom';
 
 
 
 function TotalDescrition() {
-    const count = useSelector(cartCount);
-    const total = useSelector(cartTotal)
+    const {cartCount,cartTotal} = useSelector(state => state.cart);
     const dispatch = useDispatch()
     const history = useHistory();
     const formatTotal = (totalAmount) => new Intl.NumberFormat().format(totalAmount);
@@ -21,14 +20,14 @@ function TotalDescrition() {
 
     return (
         
-        <div className={!count ? 'invisible' :'total-description'}>
+        <div className={!cartCount ? 'invisible' :'total-description'}>
 
             <div className="total-description-inner-right">
 
                 <div className="total-container">
                     <h4>
                         <span>Total: &nbsp;</span>
-                        <span>R$ {formatTotal(total)}</span>
+                        <span>R$ {formatTotal(cartTotal)}</span>
                     </h4>
                 </div>
 

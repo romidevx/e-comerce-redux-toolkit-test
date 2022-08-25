@@ -60,7 +60,7 @@ const ItemDescription = () => {
                                     <span># {cartItem.id}</span>
                                 </h5>
                                 <br/>
-                                <h5><span>R$ {(cartItem.price).toFixed(2)}</span></h5>
+                                <h5><span>R$ {cartItem.price}</span></h5>
                             </div>
 
                             {/*  BUTTONS INCREASE , DECREASE AND QUANTITY VALUE */}

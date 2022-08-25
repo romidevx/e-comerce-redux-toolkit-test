@@ -1,7 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const calculatedTotal = (cartItems) => {
+    let total = cartItems.reduce((acc,item) => acc + (item.price * item.quantity),0)
+    return total;
+}
+
 const initialState = {
   cart: JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')): [],
+  cartCount:null,
+  cartTotal:0
 };
 
 export const cartSlice =  createSlice({
@@ -9,14 +16,33 @@ export const cartSlice =  createSlice({
     initialState,
     reducers: {
         addProductToCart: (state, action) => {
-            state.cart.push(action.payload);
-            localStorage.setItem('cart', JSON.stringify([...state.cart]))
-            console.log('cart slice to add: ' + action.payload);
+            state.cart.push(action.payload)
+            state.cartCount = state.cartCount + 1
+            state.cartTotal = calculatedTotal(state.cart)
+
+            localStorage.setItem('cart', JSON.stringify([...state.cart]));
+            console.log('cart item to add: ', action.payload);
+            console.log('cart info: ', {
+                cartItem:    state.cart.map(eachItem => eachItem),
+                totalItems:  state.cartCount,
+                total:       state.cartTotal
+                
+            });
         }, 
 
         deleteProductFromCart: (state, action) => {
-            state.cart = state.cart.filter(item => item.id !== action.payload);
+            state.cart = state.cart.filter(item => item.id !== action.payload)
+            state.cartCount = state.cartCount - 1
+            state.cartTotal = calculatedTotal(state.cart)
+
             localStorage.setItem('cart', JSON.stringify([...state.cart]));
+            console.log('cart item id to delete: ', action.payload);
+            console.log('cart info: ', {
+                cartItem:    state.cart.map(eachItem => eachItem),
+                totalItems:  state.cartCount,
+                total:       state.cartTotal
+                
+            });
         },
 
         decreaseProductQuantity: (state, action) => {
@@ -35,7 +61,10 @@ export const cartSlice =  createSlice({
         },
         
         checkOutCart:(state) => {
-            state.cart = [];
+            state.cart = []
+            state.cartCount = null
+            state.cartTotal = 0
+            localStorage.setItem('cart', JSON.stringify([]))
         }
 
     }
@@ -43,11 +72,5 @@ export const cartSlice =  createSlice({
 
 // CART ACTIONS 
 export const { addProductToCart, checkOutCart, deleteProductFromCart, decreaseProductQuantity, increaseProductQuantity } = cartSlice.actions;
-
-// CART COUNT
-export const cartCount = (state) =>  state.cart.cart.length;
-
-// CART TOTAL AMOUNT $$
-export const cartTotal = (state) =>  state.cart.cart.reduce((acc,itemValue) => acc + (itemValue.quantity * itemValue.price),0);
 
 export default cartSlice.reducer;

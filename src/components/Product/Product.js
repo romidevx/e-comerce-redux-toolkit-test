@@ -26,17 +26,16 @@ function Product({productInfo}) {
                 <h3 className='product-price'><small>R$</small> {productInfo.price.toFixed(2)}</h3>
 
                 <div className='product-description'>
-                    {
-                        isProductInCart(productInfo.id) 
-                        ?  <h3 style={{ backgroundColor:'#ffcc00',color:'#000',padding:'7px 10px'}}>In cart</h3>     
-                        : <div>
-                            <span>id#   <b>{productInfo.id}   </b></span>
-                            <span>score:<b>{productInfo.score}</b></span>
-                          </div> 
-
-                    }
-                    
+                    <div>
+                        <span>id#   <b>{productInfo.id}   </b>&nbsp;</span>
+                        <span>score:<b>{productInfo.score}</b></span>
+                        {
+                            isProductInCart(productInfo.id) && <span className='incart-tag'>In cart</span>     
+                        }
+                    </div> 
                 </div>
+
+                
         </div>
     )
 }
