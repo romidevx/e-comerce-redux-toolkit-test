@@ -18,7 +18,7 @@ function Products() {
             <div className="products-container">
                 {
                     !products.length 
-                    ? <h3>Ooops...não tem produtos</h3>
+                    ? <h3>Oops...não tem produtos</h3>
                     : products.map( productItem => 
                         <Product key={productItem.id} productInfo={productItem}/>
                       )
