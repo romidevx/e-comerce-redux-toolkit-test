@@ -4,11 +4,11 @@ To install all dependencies run `npm install`
 
 ### Start Application in develoment mode
 
-To run Pokemon App use `npm start`
+To run Game Force X - E-comerce App use `npm start`
 
 ### Build Application for production
 
-To run Pokemon App use `npm run build`
+To build the the aplication for production use `npm run build`
 
 
 ## Pokemon API
